@@ -81,4 +81,6 @@
    - periodo_trabalho
    - ativo (0 ou 1)
 ## Relacionamentos:
-- Um funcionário pertence a um alojamento e um canteiro.- Um funcionário pode estar vinculado a vários canteiros via funcionarios_canteiros.- Veículos podem ser atribuídos a canteiros
+- Um funcionário pertence a um alojamento e um canteiro.
+- Um funcionário pode estar vinculado a vários canteiros via funcionarios_canteiros.
+- Veículos podem ser atribuídos a canteiros
