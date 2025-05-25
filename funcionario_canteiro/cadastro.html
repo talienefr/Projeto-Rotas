@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vincular Funcionário a Canteiro</title>
+  <link rel="stylesheet" href="funcionario_canteiro.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Vínculo Funcionário ↔ Canteiro</h1>
+    <form id="form-vinculo">
+      <label>Funcionário:</label>
+      <select id="funcionario_id" required>
+        <option value="">Carregando funcionários...</option>
+      </select>
+
+      <label>Canteiro:</label>
+      <select id="canteiro_id" required>
+        <option value="">Carregando canteiros...</option>
+      </select>
+
+      <label>Período de Trabalho:</label>
+      <input type="text" id="periodo_trabalho" placeholder="Ex: manhã, tarde..." required>
+
+      <label>
+        <input type="checkbox" id="ativo" checked>
+        Ativo
+      </label>
+
+      <button type="submit">Cadastrar Vínculo</button>
+    </form>
+
+    <h2>Vínculos Existentes</h2>
+    <table id="tabela-vinculos">
+      <thead>
+        <tr>
+          <th>Funcionário</th>
+          <th>Canteiro</th>
+          <th>Período</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <a href="../index.html" class="menu-btn">⬅ Voltar ao Menu</a>
+    <div id="mensagem"></div>
+  </div>
+  <script src="funcionario_canteiro.js"></script>
+</body>
+</html>
+
