@@ -5,13 +5,13 @@ body {
   background-color: #f7f9fc;
   margin: 0;
   padding: 0;
-  color: #333;
+  color: #1b1a1a;
 }
 
 .container {
-  max-width: 600px;
-  margin: 60px auto;
-  padding: 40px;
+  max-width: 60vh;
+  margin: 2vh auto;
+  padding: 0.8vh;
   background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);

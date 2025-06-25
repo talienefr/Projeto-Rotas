@@ -5,11 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sistema de Rotas - Menu Principal</title>
   <link rel="stylesheet" href="style.css">
+   <!-- Leaflet + Routing Machine -->
+   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+   <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+   <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.min.js"></script>
+
 </head>
 <body>
   <div class="container">
     <h1>Menu Principal</h1>
-    <p>Bem-vindo ao sistema de otimização de rotas. Escolha uma opção:</p>
+    <p>Bem-vindo ao LocaFácil seu sistema de otimização de rotas. Escolha uma opção:</p>
+
 
     <div class="menu-grid">
       <a href="funcionario/cadastro.html" class="menu-btn">Cadastro de Funcionário</a>
@@ -18,8 +25,35 @@
       <a href="veiculo/cadastro.html" class="menu-btn">Cadastro de Veículo</a>
       <a href="funcionario_canteiro/cadastro.html" class="menu-btn">Vínculo Funcionário ↔ Canteiro</a>
     </div>
-  </div>
+    <div id="map"></div>
+<script>
+  // Cria o mapa
+  var map = L.map('map').setView([-23.5505, -46.6333], 13); // São Paulo
+
+  // Camada base (OpenStreetMap)
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(map);
+
+  // Usa geolocalização do navegador
+  navigator.geolocation.getCurrentPosition(function(pos) {
+    const origem = L.latLng(pos.coords.latitude, pos.coords.longitude);
+    const destino = L.latLng(-23.564, -46.652); // Exemplo: Av. Paulista
+
+    // Traça a rota
+    L.Routing.control({
+      waypoints: [origem, destino],
+      routeWhileDragging: true,
+      showAlternatives: true
+    }).addTo(map);
+  }, function() {
+    alert('Não foi possível obter a localização.');
+  });
+</script>
 
   <script src="script.js"></script>
+  </div>
+  
+
 </body>
 </html>

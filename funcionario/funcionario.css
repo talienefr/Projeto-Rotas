@@ -1,4 +1,4 @@
-/* funcionario.css - Estilo da tela de cadastro de funcionário */
+/* veiculo.css - Estilo da tela de cadastro de veículo */
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -33,7 +33,7 @@ label {
   font-weight: 600;
 }
 
-input, select {
+input[type="text"], input[type="number"] {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 6px;
